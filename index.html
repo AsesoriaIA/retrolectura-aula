@@ -4599,6 +4599,20 @@ function imprimirHTML(html, titulo) {
    ========================================================================= */
 
 /* ----------------------------- Navegación ----------------------------- */
+
+/* Lleva la vista al inicio del contenido de trabajo (los pasos o el panel
+   activo), no al principio de la página: al cambiar de paso la docente sigue
+   viendo el panel que abrió, sin volver a la cabecera ni a «Primeros pasos». */
+function desplazarAlContenido() {
+  const vista = document.querySelector('.panel.activo');
+  if (!vista) return;
+  const conLado = vista.querySelector('.con-lado');
+  const ancla = (conLado && conLado.getBoundingClientRect().height > 0) ? conLado : vista;
+  const cab = document.querySelector('.app-header');
+  const altoCab = cab ? cab.offsetHeight : 0;
+  const y = Math.max(0, Math.round(ancla.getBoundingClientRect().top + window.pageYOffset - altoCab - 12));
+  try { window.scrollTo({ top: y, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, y); }
+}
 function mostrarVista(id) {
   ['vista-docente', 'vista-estudiante', 'vista-ayuda'].forEach(v => {
     const el = document.getElementById(v);
@@ -4616,7 +4630,7 @@ function mostrarVista(id) {
   const bb = { 'vista-docente': 'btnBarraDocente', 'vista-estudiante': 'btnBarraEstudiante', 'vista-ayuda': 'btnBarraAyuda' }[id];
   const activo = document.getElementById(bb);
   if (activo) activo.className = 'activo';
-  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+  desplazarAlContenido();
 }
 function irAPaso(n) {
   mostrarVista('vista-docente');
@@ -4629,7 +4643,7 @@ function irAPaso(n) {
   if (n === 5) renderRevision();
   if (n === 6) renderComunicar();
   if (n === 8) { renderUso(); renderBitacora(); }
-  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+  desplazarAlContenido();
 }
 function refrescarTodo() {
   renderSelectoresCursos();
