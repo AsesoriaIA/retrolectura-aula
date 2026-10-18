@@ -373,11 +373,13 @@ blockquote.respuesta{
       <p class="sub">Este sitio reemplaza el pilotaje por un uso real en el aula: usted configura su control, carga las respuestas del curso y entrega retroalimentación individual aprobada por usted. Todo funciona sin internet y <strong>nada sale de este dispositivo</strong>.</p>
       <ol>
         <li><strong>Paso 1 · Control:</strong> escriba la pregunta, el fragmento leído y los términos clave de su control. La rúbrica ya viene con los descriptores del curso y puede ajustarlos.</li>
-        <li><strong>Paso 2 · Curso:</strong> pegue la lista de estudiantes una sola vez. El sistema les asigna un código (E-01, E-02…) y así se identifican en todo el proceso.</li>
-        <li><strong>Paso 3 · Respuestas:</strong> digite o pegue las respuestas; o reciba las que escriban los estudiantes en su celular.</li>
-        <li><strong>Paso 4 · Analizar:</strong> el análisis por rúbrica se ejecuta aquí mismo, en segundos.</li>
-        <li><strong>Paso 5 · Revisar:</strong> ajuste lo que haga falta y apruebe. Nada llega al estudiante sin su aprobación.</li>
-        <li><strong>Paso 6 · Comunicar</strong> y <strong>Paso 7 · Reporte:</strong> entregue las observaciones e imprima el reporte del curso.</li>
+        <li><strong>Paso 2 · Abrir el control:</strong> genere el pase del control y proyecte su código QR para que los estudiantes escriban desde el celular.</li>
+        <li><strong>Paso 3 · Curso:</strong> pegue la lista de estudiantes una sola vez. El sistema les asigna un código (E-01, E-02…) y así se identifican en todo el proceso.</li>
+        <li><strong>Paso 4 · Respuestas:</strong> digite o pegue las respuestas; o reciba las que escriban los estudiantes en su celular.</li>
+        <li><strong>Paso 5 · Analizar:</strong> el análisis por rúbrica se ejecuta aquí mismo, en segundos.</li>
+        <li><strong>Paso 6 · Revisar:</strong> ajuste lo que haga falta y apruebe. Nada llega al estudiante sin su aprobación.</li>
+        <li><strong>Paso 7 · Comunicar:</strong> entregue las observaciones aprobadas y publique al espacio del estudiante.</li>
+        <li><strong>Paso 8 · Reporte</strong> y <strong>Paso 9 · Datos:</strong> imprima el reporte del curso y descargue el respaldo al terminar la jornada.</li>
       </ol>
       <div class="acciones">
         <button type="button" class="btn btn-azul" id="btnEmpezar">Empezar por el paso 1</button>
@@ -390,13 +392,14 @@ blockquote.respuesta{
     <div class="con-lado">
       <nav class="pasos-nav no-impresion" aria-label="Pasos del proceso">
         <button type="button" class="paso-btn activo" data-paso="1"><span class="num">1</span> Control</button>
-        <button type="button" class="paso-btn" data-paso="2"><span class="num">2</span> Curso</button>
-        <button type="button" class="paso-btn" data-paso="3"><span class="num">3</span> Respuestas</button>
-        <button type="button" class="paso-btn" data-paso="4"><span class="num">4</span> Analizar</button>
-        <button type="button" class="paso-btn" data-paso="5"><span class="num">5</span> Revisar y aprobar</button>
-        <button type="button" class="paso-btn" data-paso="6"><span class="num">6</span> Comunicar</button>
-        <button type="button" class="paso-btn" data-paso="7"><span class="num">7</span> Reporte del curso</button>
-        <button type="button" class="paso-btn" data-paso="8"><span class="num">8</span> Datos y respaldo</button>
+        <button type="button" class="paso-btn" data-paso="2"><span class="num">2</span> Abrir el control</button>
+        <button type="button" class="paso-btn" data-paso="3"><span class="num">3</span> Curso</button>
+        <button type="button" class="paso-btn" data-paso="4"><span class="num">4</span> Respuestas</button>
+        <button type="button" class="paso-btn" data-paso="5"><span class="num">5</span> Analizar</button>
+        <button type="button" class="paso-btn" data-paso="6"><span class="num">6</span> Revisar y aprobar</button>
+        <button type="button" class="paso-btn" data-paso="7"><span class="num">7</span> Comunicar</button>
+        <button type="button" class="paso-btn" data-paso="8"><span class="num">8</span> Reporte del curso</button>
+        <button type="button" class="paso-btn" data-paso="9"><span class="num">9</span> Datos y respaldo</button>
       </nav>
 
       <div>
@@ -475,20 +478,47 @@ blockquote.respuesta{
             <div id="editorRubrica"></div>
           </div>
 
-          <div class="card card-dorada">
-            <h3>Abrir el control para responder en clase</h3>
-            <div class="check-fila">
-              <input type="checkbox" id="chkAbiertoRespuestas">
-              <label for="chkAbiertoRespuestas">Permitir que los estudiantes escriban su respuesta desde su celular en el espacio del estudiante. Al escribirla, el sistema les entrega un pase (código QR y enlace) para que usted la reciba.</label>
-            </div>
-            <p class="ayuda">Si su curso responde en papel, deje esta opción apagada: usted digita las respuestas en el paso 3.</p>
-          </div>
         </section>
 
         <!-- ---------------------------- PASO 2 ---------------------------- -->
         <section class="paso-panel" id="paso-2">
+          <div class="card card-dorada">
+            <h2>Paso 2 · Abrir el control en clase</h2>
+            <p class="sub">Este es el paso que se usa al empezar la clase: aquí decide si el curso responde desde el celular y aquí saca el código QR que van a escanear los estudiantes.</p>
+            <div class="check-fila">
+              <input type="checkbox" id="chkAbiertoRespuestas">
+              <label for="chkAbiertoRespuestas">Permitir que los estudiantes escriban su respuesta desde su celular en el espacio del estudiante. Al escribirla, el sistema les entrega un pase (código QR y enlace) para que usted la reciba.</label>
+            </div>
+            <p class="ayuda">Si su curso responde en papel, deje esta opción apagada: usted digita las respuestas en el paso 4.</p>
+          </div>
+
+          <div class="card card-azul">
+            <h3>Pase del control para el tablero</h3>
+            <p class="sub">Un solo código QR para todo el curso: proyéctelo o imprímalo y los estudiantes lo abren con la cámara de su celular. Con él ven la pregunta del control y pueden escribir su respuesta para entregársela como pase.</p>
+            <div class="acciones">
+              <button type="button" class="btn btn-azul" id="btnGenerarPaseControl">🖼 Generar el pase del control</button>
+              <button type="button" class="btn btn-gris" id="btnImprimirPaseControl">🖨 Imprimir el cartel</button>
+            </div>
+            <div class="aviso" id="avisoPaseControl" role="status"></div>
+            <div id="paseControlWrap"></div>
+          </div>
+
           <div class="card">
-            <h2>Paso 2 · Curso y estudiantes</h2>
+            <h3>Cómo se generan los códigos de los estudiantes</h3>
+            <p class="sub">El código es la llave con la que cada estudiante entrega y recibe. No hay que inventarlo ni escribirlo a mano: el sitio lo asigna solo.</p>
+            <ol class="pasos">
+              <li>Abra el <strong>paso 3 · Curso</strong> y pegue la lista del curso, un estudiante por línea.</li>
+              <li>El sistema asigna los códigos en el mismo orden de la lista: <strong>E-01, E-02, E-03…</strong> Si después agrega estudiantes, reciben el siguiente número sin borrar los anteriores ni sus respuestas.</li>
+              <li>Entregue a cada estudiante su código (anotado en el cuaderno o en un papelito). Ese código lo usa siempre, incluso cuando entra con el pase del tablero.</li>
+            </ol>
+            <p class="ayuda">Los nombres son opcionales: si no los necesita, deje apagada la casilla «Guardar los nombres». Si un estudiante olvida su código, consúltelo en la tabla del paso 3.</p>
+          </div>
+        </section>
+
+        <!-- ---------------------------- PASO 3 ---------------------------- -->
+        <section class="paso-panel" id="paso-3">
+          <div class="card">
+            <h2>Paso 3 · Curso y estudiantes</h2>
             <p class="sub">Los estudiantes se identifican con un código (E-01, E-02…). El nombre completo se guarda únicamente en este dispositivo y se puede omitir.</p>
 
             <div class="campo">
@@ -532,10 +562,10 @@ blockquote.respuesta{
           </div>
         </section>
 
-        <!-- ---------------------------- PASO 3 ---------------------------- -->
-        <section class="paso-panel" id="paso-3">
+        <!-- ---------------------------- PASO 4 ---------------------------- -->
+        <section class="paso-panel" id="paso-4">
           <div class="card">
-            <h2>Paso 3 · Respuestas de los estudiantes</h2>
+            <h2>Paso 4 · Respuestas de los estudiantes</h2>
             <p class="sub">Tres formas de entrar las respuestas al sistema. La verificación de la transcripción es obligatoria: es el control de calidad que exige el diseño curricular para no generar observaciones equivocadas.</p>
             <div class="progreso">
               <span class="pill p-azul" id="pillProgreso">0 de 0 respuestas cargadas</span>
@@ -625,12 +655,12 @@ blockquote.respuesta{
           </div>
         </section>
 
-        <!-- ---------------------------- PASO 4 ---------------------------- -->
-        <section class="paso-panel" id="paso-4">
+        <!-- ---------------------------- PASO 5 ---------------------------- -->
+        <section class="paso-panel" id="paso-5">
           <div class="card">
-            <h2>Paso 4 · Analizar el curso</h2>
+            <h2>Paso 5 · Analizar el curso</h2>
             <p class="sub">El análisis por rúbrica se ejecuta aquí, en su dispositivo, sin internet y sin claves. Es el mismo motor calibrado y validado del prototipo, de modo que los resultados son reproducibles.</p>
-            <div class="destacado" id="analizarResumen">Cargue respuestas en el paso 3 para poder analizar.</div>
+            <div class="destacado" id="analizarResumen">Cargue respuestas en el paso 4 para poder analizar.</div>
             <div class="progreso oculto" id="progresoAnalizar">
               <div class="barra"><div class="barra-fill" id="barraAnalizar" style="width:0%"></div></div>
               <span class="pill p-azul" id="txtProgresoAnalizar">0 %</span>
@@ -651,7 +681,7 @@ blockquote.respuesta{
               <li><strong>Observación por criterio</strong> dirigida al estudiante, con una acción concreta de mejora.</li>
             </ul>
             <div class="aviso visible alerta" role="note">
-              El análisis <strong>no califica solo</strong>: propone un nivel y un texto. La decisión final es suya, en el paso 5.
+              El análisis <strong>no califica solo</strong>: propone un nivel y un texto. La decisión final es suya, en el paso 6.
             </div>
           </div>
 
@@ -692,10 +722,10 @@ blockquote.respuesta{
           </div>
         </section>
 
-        <!-- ---------------------------- PASO 5 ---------------------------- -->
-        <section class="paso-panel" id="paso-5">
+        <!-- ---------------------------- PASO 6 ---------------------------- -->
+        <section class="paso-panel" id="paso-6">
           <div class="card">
-            <h2>Paso 5 · Revisar y aprobar</h2>
+            <h2>Paso 6 · Revisar y aprobar</h2>
             <p class="sub">Ninguna observación llega al estudiante sin su aprobación. Ajuste el nivel o el texto que haga falta y apruebe: lo aprobado es lo único que se comunica.</p>
             <div class="acciones no-impresion">
               <button type="button" class="btn btn-gris btn-chico" id="btnAuditar">🎲 Auditar al azar el 20 % de los casos verdes</button>
@@ -723,11 +753,11 @@ blockquote.respuesta{
           <div id="bandeja"></div>
         </section>
 
-        <!-- ---------------------------- PASO 6 ---------------------------- -->
-        <section class="paso-panel" id="paso-6">
+        <!-- ---------------------------- PASO 7 ---------------------------- -->
+        <section class="paso-panel" id="paso-7">
           <div class="card">
-            <h2>Paso 6 · Comunicar la retroalimentación</h2>
-            <p class="sub">Cuatro maneras de entregar las observaciones aprobadas, según cómo esté el curso ese día.</p>
+            <h2>Paso 7 · Comunicar la retroalimentación</h2>
+            <p class="sub">Tres maneras de entregar las observaciones aprobadas, según cómo esté el curso ese día. El pase del control, que se usa al empezar la clase, está en el paso 2.</p>
             <div class="progreso">
               <span class="pill p-azul" id="pillPublicadas">0 observaciones publicadas</span>
               <span class="pill p-gris" id="pillAprobadasCom">0 aprobadas en total</span>
@@ -799,22 +829,12 @@ blockquote.respuesta{
             <div id="consultaResultado" class="consulta-grande"></div>
           </div>
 
-          <div class="card card-azul">
-            <h3>D · Pase del control para el tablero</h3>
-            <p class="sub">Un solo código QR para todo el curso: proyéctelo o imprímalo y los estudiantes lo abren con la cámara de su celular. Con él ven la pregunta del control y pueden escribir su respuesta para entregársela como pase.</p>
-            <div class="acciones">
-              <button type="button" class="btn btn-azul" id="btnGenerarPaseControl">🖼 Generar el pase del control</button>
-              <button type="button" class="btn btn-gris" id="btnImprimirPaseControl">🖨 Imprimir el cartel</button>
-            </div>
-            <div class="aviso" id="avisoPaseControl" role="status"></div>
-            <div id="paseControlWrap"></div>
-          </div>
         </section>
 
-        <!-- ---------------------------- PASO 7 ---------------------------- -->
-        <section class="paso-panel" id="paso-7">
+        <!-- ---------------------------- PASO 8 ---------------------------- -->
+        <section class="paso-panel" id="paso-8">
           <div class="card">
-            <h2>Paso 7 · Reporte del curso</h2>
+            <h2>Paso 8 · Reporte del curso</h2>
             <p class="sub">Lo que antes solo se tenía por percepción general: promedios por criterio frente al nivel esperado, distribución de la certeza, error más recurrente y lista de estudiantes que requieren refuerzo.</p>
             <div class="acciones">
               <button type="button" class="btn btn-azul" id="btnGenerarReporte">📊 Generar el reporte</button>
@@ -828,12 +848,27 @@ blockquote.respuesta{
             <div id="indicadores"></div>
           </div>
           <div id="reporteContenido"></div>
+
+          <div class="card card-dorada">
+            <h3>Evidencia de mejora (pase del estudiante)</h3>
+            <p class="sub">Cuando un estudiante lee sus observaciones y reescribe su respuesta, su celular le genera un <strong>pase de mejora</strong> (empieza por RM1.). Péguelo aquí para dejar la evidencia y verificar si las observaciones ayudaron a mejorar.</p>
+            <div class="campo">
+              <label for="txtPaseMejora">Pegue el pase de mejora del estudiante</label>
+              <textarea id="txtPaseMejora" rows="4" placeholder="RM1.… (o el enlace completo que le envió el estudiante)"></textarea>
+            </div>
+            <div class="acciones">
+              <button type="button" class="btn btn-azul" id="btnRegistrarMejora">➕ Registrar la mejora</button>
+              <button type="button" class="btn btn-gris" id="btnExportarMejoras">⬇ Descargar mejoras (CSV)</button>
+            </div>
+            <div class="aviso" id="avisoMejora" role="status"></div>
+            <div id="mejorasContenido"></div>
+          </div>
         </section>
 
-        <!-- ---------------------------- PASO 8 ---------------------------- -->
-        <section class="paso-panel" id="paso-8">
+        <!-- ---------------------------- PASO 9 ---------------------------- -->
+        <section class="paso-panel" id="paso-9">
           <div class="card">
-            <h2>Paso 8 · Datos y respaldo</h2>
+            <h2>Paso 9 · Datos y respaldo</h2>
             <p class="sub">Todo se guarda en el navegador de este dispositivo. Descargue un respaldo al terminar cada jornada: es la única forma de no perder el trabajo si se limpia el navegador o se cambia de equipo.</p>
             <div class="progreso">
               <span class="pill p-azul" id="usoAlmacenamiento">Calculando…</span>
@@ -947,9 +982,15 @@ blockquote.respuesta{
 
     <!-- ---------------- 3. Mi retroalimentación ---------------- -->
     <section class="card" id="cardRetro">
-      <h3>3 · Leer mi retroalimentación</h3>
+      <h3>3 · Leer mi retroalimentación y mejorar mi respuesta</h3>
       <div id="estRetroPendiente">
         <p class="sub">Tu profesor te entrega un <strong>pase de retroalimentación</strong> (un enlace, un código QR o una tira impresa). Ábrelo y verás tus observaciones.</p>
+        <ol class="pasos">
+          <li><strong>Lee</strong> las observaciones de los tres criterios: idea principal, inferencia y argumentación.</li>
+          <li><strong>Vuelve a escribir</strong> tu respuesta siguiendo lo que te señalaron, en «Actividad: mejora tu respuesta».</li>
+          <li><strong>Compara</strong> tu versión de antes con la nueva: el sitio te muestra en qué criterios mejoraste.</li>
+          <li><strong>Entrega tu pase de mejora</strong> a tu profesor, para que vea tu avance.</li>
+        </ol>
         <div class="campo">
           <label for="txtPaseRetro">Pega aquí tu pase de retroalimentación</label>
           <textarea id="txtPaseRetro" rows="4" placeholder="Pega el enlace o el código que te dio tu profesor"></textarea>
@@ -979,27 +1020,35 @@ blockquote.respuesta{
           <h4>Antes de la clase</h4>
           <ul>
             <li><strong>Paso 1 · Control.</strong> Escriba el nombre del control, la pregunta, la lectura evaluada, el género textual, los términos clave y el fragmento leído. Revise los descriptores de la rúbrica y ajústelos si su curso usa otras palabras. Guarde.</li>
-            <li><strong>Paso 2 · Curso.</strong> Pegue la lista de estudiantes (una por línea). El sistema asigna códigos y conserva los que ya existían.</li>
+            <li><strong>Paso 2 · Abrir el control.</strong> Marque «Abrir el control para responder en clase» y genere aquí el <em>pase del control</em>: es el que se proyecta en el tablero para que los estudiantes entren con el QR o el enlace. Se necesita al inicio de la clase, por eso va en este paso y no al final.</li>
+            <li><strong>Paso 3 · Curso.</strong> Pegue la lista de estudiantes (una por línea). El sistema asigna códigos y conserva los que ya existían.</li>
             <li><strong>Controles anteriores.</strong> Puede crear un control nuevo por cada lectura del período: las respuestas de cada control quedan separadas y el reporte también.</li>
           </ul>
           <h4>El día del control</h4>
           <ul>
-            <li><strong>Si responden en papel:</strong> en el paso 3 digite cada respuesta, compare con el escrito del estudiante y marque la casilla de verificación. Use «Ir al siguiente pendiente» para avanzar rápido.</li>
-            <li><strong>Si responden en el celular:</strong> active «Abrir el control para responder en clase» (paso 1) y en el paso 6 genere el <em>pase del control</em> para que los estudiantes lo abran con el QR o el enlace. Ellos escriben y le entregan un pase con su respuesta. Usted los recibe en el paso 3 con la cámara o pegando el pase.</li>
+            <li><strong>Si responden en papel:</strong> en el paso 4 digite cada respuesta, compare con el escrito del estudiante y marque la casilla de verificación. Use «Ir al siguiente pendiente» para avanzar rápido.</li>
+            <li><strong>Si responden en el celular:</strong> entre al enlace del pase del control (paso 2) y los estudiantes escriben allí. Al terminar, cada uno le entrega un pase con su respuesta. Usted los recibe en el paso 4 con la cámara o pegando el pase.</li>
             <li><strong>Si es mixto:</strong> combine las dos vías; el sistema las trata igual.</li>
           </ul>
         </div>
         <div>
           <h4>Después del control</h4>
           <ul>
-            <li><strong>Paso 4 · Analizar.</strong> Un clic. Obtiene nivel por criterio, semáforo de certeza y una observación por criterio con acción concreta.</li>
-            <li><strong>Paso 5 · Revisar y aprobar.</strong> Empiece por los casos rojos y amarillos. Ajuste niveles u observaciones y apruebe. La auditoría aleatoria del 20 % de los casos verdes es el control de confiabilidad: registre una discrepancia si el sistema se equivocó.</li>
-            <li><strong>Paso 6 · Comunicar.</strong> Imprima las tiras, entregue pases individuales o use el modo consulta. Nada se comunica sin aprobación previa.</li>
-            <li><strong>Paso 7 · Reporte.</strong> Promedios por criterio frente al nivel esperado, error más recurrente y lista de refuerzo. De ahí sale la retroalimentación colectiva de 15 minutos que ya trae sugerida.</li>
-            <li><strong>Paso 8 · Datos.</strong> Descargue el respaldo al terminar la jornada.</li>
+            <li><strong>Paso 5 · Analizar.</strong> Un clic. Obtiene nivel por criterio, semáforo de certeza y una observación por criterio con acción concreta.</li>
+            <li><strong>Paso 6 · Revisar y aprobar.</strong> Empiece por los casos rojos y amarillos. Ajuste niveles u observaciones y apruebe. La auditoría aleatoria del 20 % de los casos verdes es el control de confiabilidad: registre una discrepancia si el sistema se equivocó.</li>
+            <li><strong>Paso 7 · Comunicar.</strong> Imprima las tiras, entregue pases individuales o use el modo consulta. Nada se comunica sin aprobación previa.</li>
+            <li><strong>Paso 8 · Reporte.</strong> Promedios por criterio frente al nivel esperado, error más recurrente y lista de refuerzo. De ahí sale la retroalimentación colectiva de 15 minutos que ya trae sugerida. Aquí también registra la <em>evidencia de mejora</em>.</li>
+            <li><strong>Paso 9 · Datos.</strong> Descargue el respaldo al terminar la jornada.</li>
           </ul>
-          <h4>La actividad de metacognición</h4>
-          <p class="sub">Con el pase individual, el estudiante elige la observación que le resultó más útil, reescribe su respuesta y el sitio compara antes y después con la misma rúbrica. Esa comparación es la evidencia de impacto del diseño curricular.</p>
+          <h4>El ciclo de mejora (la evidencia de impacto)</h4>
+          <ul>
+            <li><strong>1.</strong> Con el pase individual, el estudiante lee sus observaciones y elige la que le resultó más útil.</li>
+            <li><strong>2.</strong> Reescribe su respuesta siguiendo esas observaciones.</li>
+            <li><strong>3.</strong> El sitio compara las dos versiones con la misma rúbrica y le dice en qué criterios mejoró.</li>
+            <li><strong>4.</strong> El estudiante genera su <strong>pase de mejora</strong> (RM1.) y se lo entrega. Usted lo pega en el paso 8, en «Evidencia de mejora»: allí ve, estudiante por estudiante, el nivel de antes y el de ahora, y qué observación le sirvió. Esa es la verificación de que la retroalimentación mejoró el desempeño, no solo que se entregó.</li>
+          </ul>
+          <h4>¿Cómo se generan los códigos de los estudiantes?</h4>
+          <p class="sub">No se escriben a mano: los crea el sistema cuando usted pega la lista del curso en el <strong>paso 3</strong>. Al primer estudiante le corresponde <strong>E-01</strong>, al segundo <strong>E-02</strong> y así en el orden de la lista. El estudiante nunca ve el código como una tarea: le llega impreso en su tira o dentro de su pase de retroalimentación. Cada código es único en el curso y estable durante el período. Si agrega estudiantes después, los nuevos reciben códigos nuevos sin alterar los anteriores; si borra a alguien, ese código no se reutiliza. Un mismo estudiante conserva su código en todos los controles, y así el reporte puede comparar su avance entre lecturas. Los nombres solo se guardan si usted activa esa casilla; para circulación de tiras se recomienda la devolución por código.</p>
         </div>
       </div>
       <div class="acciones">
@@ -1013,7 +1062,7 @@ blockquote.respuesta{
       <ul>
         <li><strong>Nada se sube a internet.</strong> Las respuestas, los niveles y las observaciones se guardan en el navegador del dispositivo que usted usa (almacenamiento local). El sitio no tiene servidor ni base de datos externa.</li>
         <li><strong>Sin cuentas de estudiante.</strong> Ningún estudiante se registra y ninguno sube información: los pases se entregan de forma directa entre el estudiante y usted.</li>
-        <li><strong>Identificación por código.</strong> Todo el flujo funciona con códigos (E-01, E-02…). Los nombres son opcionales y solo se guardan si usted activa esa casilla en el paso 2.</li>
+        <li><strong>Identificación por código.</strong> Todo el flujo funciona con códigos (E-01, E-02…), que el sistema asigna solo al pegar la lista del curso en el paso 3. Los nombres son opcionales y solo se guardan si usted activa esa casilla en el paso 3.</li>
         <li><strong>Decisión humana.</strong> La propuesta automática nunca se comunica sin su revisión y aprobación, y un 20 % de los casos de mayor certeza se audita al azar.</li>
         <li><strong>IA generativa apagada.</strong> El motor de IA generativa está desactivado por defecto. Solo si usted lo activa con su clave, el texto de la respuesta se enviaría al servicio externo correspondiente, sujeto a la política de ese proveedor.</li>
         <li><strong>Recomendaciones de manejo.</strong> Si el equipo es compartido con otras personas, no active el guardado de nombres; descargue el respaldo y bórrelo del escritorio cuando ya no lo necesite; en las tiras impresas, prefiera el código cuando la devolución vaya a otras manos.</li>
@@ -1029,11 +1078,11 @@ blockquote.respuesta{
       <h4>¿Puedo cambiar la rúbrica a mitad del período?</h4>
       <p class="sub">Sí, en el paso 1. Tenga en cuenta que el análisis siguiente usará los descriptores nuevos: conviene aplicarlo a un control nuevo y no a uno ya comunicado.</p>
       <h4>¿Qué pasa si limpio el navegador o cambio de computador?</h4>
-      <p class="sub">Se pierde lo que no esté respaldado. Por eso el paso 8 permite descargar un respaldo completo (un archivo .json) y restaurarlo en otro dispositivo o en el mismo después de limpiar.</p>
+      <p class="sub">Se pierde lo que no esté respaldado. Por eso el paso 9 permite descargar un respaldo completo (un archivo .json) y restaurarlo en otro dispositivo o en el mismo después de limpiar.</p>
       <h4>¿Puedo trabajar con varios cursos?</h4>
       <p class="sub">Sí. Cree un curso por grupo y un control por lectura; ambos se eligen con sus selectores arriba de cada paso.</p>
       <h4>¿Y si un estudiante no tiene celular o no quiere usar el suyo?</h4>
-      <p class="sub">Responda con el flujo de papel: usted digita la respuesta en el paso 3. También puede mostrarle su retroalimentación en el modo consulta desde su propio celular o el computador del aula.</p>
+      <p class="sub">Responda con el flujo de papel: usted digita la respuesta en el paso 4. También puede mostrarle su retroalimentación en el modo consulta desde su propio celular o el computador del aula. El ciclo de mejora se puede hacer en el cuaderno y usted registra manualmente la evidencia en el paso 8.</p>
       <h4>¿El sistema me da la nota del período?</h4>
       <p class="sub">No. Devuelve niveles de comprensión por criterio (1 a 4) y observaciones por escrito; la conversión a nota es una decisión suya, con los criterios de su institución.</p>
     </div>
@@ -1049,15 +1098,17 @@ blockquote.respuesta{
         <p class="tira-cod">Retroalimentación individual de los controles de lectura · Lengua Castellana</p>
         <ol>
           <li><strong>Paso 1.</strong> Control: pregunta, lectura, género textual, términos clave, fragmento y rúbrica.</li>
-          <li><strong>Paso 2.</strong> Curso: pegue la lista de estudiantes y revise los códigos.</li>
-          <li><strong>Paso 3.</strong> Respuestas: digitadas con la casilla de verificación marcada, o recibidas por pase desde los celulares.</li>
-          <li><strong>Paso 4.</strong> Analizar: un clic, segundos.</li>
-          <li><strong>Paso 5.</strong> Revisar rojos y amarillos, ajustar si hace falta, aprobar. Auditar el 20 % de los verdes.</li>
-          <li><strong>Paso 6.</strong> Comunicar: tiras impresas, pases individuales o modo consulta.</li>
-          <li><strong>Paso 7.</strong> Reporte: error más recurrente y lista de refuerzo para la retroalimentación colectiva de 15 minutos.</li>
-          <li><strong>Paso 8.</strong> Descargar el respaldo al terminar.</li>
+          <li><strong>Paso 2.</strong> Abrir el control y proyectar el pase del control para que los estudiantes entren con el QR.</li>
+          <li><strong>Paso 3.</strong> Curso: pegue la lista de estudiantes y revise los códigos (E-01, E-02…).</li>
+          <li><strong>Paso 4.</strong> Respuestas: digitadas con la casilla de verificación marcada, o recibidas por pase desde los celulares.</li>
+          <li><strong>Paso 5.</strong> Analizar: un clic, segundos.</li>
+          <li><strong>Paso 6.</strong> Revisar rojos y amarillos, ajustar si hace falta, aprobar. Auditar el 20 % de los verdes.</li>
+          <li><strong>Paso 7.</strong> Comunicar: tiras impresas, pases individuales o modo consulta.</li>
+          <li><strong>Paso 8.</strong> Reporte: error más recurrente y lista de refuerzo para la retroalimentación colectiva de 15 minutos. Registre aquí el pase de mejora de cada estudiante.</li>
+          <li><strong>Paso 9.</strong> Descargar el respaldo al terminar.</li>
         </ol>
         <p style="margin-top:8px"><strong>Regla de oro:</strong> ninguna observación se comunica sin la aprobación de la docente. La propuesta automática es un borrador, no una calificación.</p>
+        <p style="margin-top:6px"><strong>Ciclo de mejora:</strong> el estudiante lee sus observaciones, reescribe, compara antes y después, y le entrega un pase de mejora. Así se comprueba si la retroalimentación sirvió.</p>
       </div>
     </div>
 
@@ -1079,7 +1130,7 @@ blockquote.respuesta{
 
 <footer class="app-footer">
   <p style="margin:0 0 6px"><strong>RetroLectura IA · Aula</strong> — retroalimentación individual de los controles de lectura.</p>
-  <p style="margin:0">Los datos se guardan únicamente en este dispositivo. Descargue su respaldo en el paso 8.</p>
+  <p style="margin:0">Los datos se guardan únicamente en este dispositivo. Descargue su respaldo en el paso 9.</p>
   <p class="creditos">Maestría en Educación Mediada por las TIC · Universidad Tecnológica de Bolívar · Grupo 01 · Maritza Jiménez, Betty Lagos y Yessica Márquez.</p>
 </footer>
 
@@ -3742,6 +3793,7 @@ function controlNuevo(nombre) {
     cursoId: null,
     abierto: false,
     respuestas: [],
+    mejoras: [],
     meta: {},
     creado: new Date().toISOString()
   };
@@ -3776,6 +3828,7 @@ function cargarEstado() {
       if (o && o.controles && o.cursos) {
         if (o.guardarNombres === undefined) o.guardarNombres = true;
         if (!o.bitacora) o.bitacora = [];
+        o.controles.forEach(c => { if (!c.mejoras) c.mejoras = []; });
         return o;
       }
     }
@@ -3910,8 +3963,8 @@ function leerPase(texto) {
   /* Acepta el pase completo (RC1.…) o el formato corto que usan los enlaces
      antiguos (#rc=…), para que ningún pase quede sin poder abrirse. */
   let t = String(texto == null ? '' : texto);
-  t = t.replace(/\brc=/gi, 'RC1.').replace(/\bre=/gi, 'RE1.').replace(/\brr=/gi, 'RR1.');
-  const tipos = [['RC1', 'control'], ['RE1', 'entrega'], ['RR1', 'retro']];
+  t = t.replace(/\brc=/gi, 'RC1.').replace(/\bre=/gi, 'RE1.').replace(/\brr=/gi, 'RR1.').replace(/\brm=/gi, 'RM1.');
+  const tipos = [['RC1', 'control'], ['RE1', 'entrega'], ['RR1', 'retro'], ['RM1', 'mejora']];
   for (let i = 0; i < tipos.length; i++) {
     const d = desempaquetar(tipos[i][0], t);
     if (d) return { tipo: tipos[i][1], datos: d };
@@ -3938,7 +3991,17 @@ function paseRetro(ctrl, resp) {
   });
 }
 function enlacePase(pase) { return urlBase() + '#' + pase; }
-
+/* Pase de mejora: el estudiante lo genera en su celular después de reescribir su
+   respuesta. Lleva las dos versiones y los niveles, para que la docente verifique
+   si las observaciones aprobadas sirvieron de algo. */
+function paseMejora(controlNombre, pregunta, datos) {
+  return empaquetar('RM1', {
+    k: datos.codigo, n: controlNombre, p: pregunta,
+    a: datos.antes, b: datos.nueva,
+    L: datos.L || {}, M: datos.M || {}, u: datos.util || '',
+    t: new Date().toISOString()
+  });
+}
 function generarQR(texto, anchoMinimo) {
   try {
     if (typeof qrcode !== 'function') throw new Error('librería no disponible');
@@ -4416,7 +4479,7 @@ function renderTablaRespuestas() {
   if (!cont) return;
   const c = curso();
   const ctrl = control();
-  if (!c.estudiantes.length) { cont.innerHTML = '<p class="ayuda">Primero cargue la lista del curso en el paso 2.</p>'; return; }
+  if (!c.estudiantes.length) { cont.innerHTML = '<p class="ayuda">Primero cargue la lista del curso en el paso 3.</p>'; return; }
   let html = '<div class="tabla-scroll"><table><thead><tr><th scope="col">Estudiante</th><th scope="col">Respuesta</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead><tbody>';
   let con = 0;
   c.estudiantes.forEach(e => {
@@ -4461,7 +4524,7 @@ function elegirParaDigitar(codigo) {
   document.getElementById('chkVerificada').checked = r ? !!r.verificada : false;
   document.getElementById('contadorPalabras').textContent = (r ? nPalabras(r.texto) : 0) + ' palabras';
   document.getElementById('txtRespuesta').focus();
-  irAPaso(3);
+  irAPaso(4);
   toast('Editando la respuesta de ' + codigo);
 }
 function verificarRespuesta(codigo) {
@@ -4511,10 +4574,10 @@ function renderResumenAnalisis() {
 function analizarCurso() {
   const ctrl = control();
   const c = curso();
-  if (!c.estudiantes.length) { aviso('avisoAnalizar', 'Primero cargue la lista del curso en el paso 2.', 'alerta'); return; }
+  if (!c.estudiantes.length) { aviso('avisoAnalizar', 'Primero cargue la lista del curso en el paso 3.', 'alerta'); return; }
   const pendientes = ctrl.respuestas.filter(r => !r.resultado);
   if (!pendientes.length) {
-    aviso('avisoAnalizar', ctrl.respuestas.length ? 'Todas las respuestas ya estaban analizadas. Use «Volver a analizar todo» si cambió la rúbrica, los términos clave o el fragmento.' : 'Todavía no hay respuestas cargadas en este control: cárguelas en el paso 3.', 'alerta');
+    aviso('avisoAnalizar', ctrl.respuestas.length ? 'Todas las respuestas ya estaban analizadas. Use «Volver a analizar todo» si cambió la rúbrica, los términos clave o el fragmento.' : 'Todavía no hay respuestas cargadas en este control: cárguelas en el paso 4.', 'alerta');
     return;
   }
   ejecutarAnalisis(pendientes);
@@ -4565,7 +4628,7 @@ function ejecutarAnalisis(lista, reproceso) {
     const rojos = ctrl.respuestas.filter(r => r.resultado && r.resultado.semaforo === 'rojo').length;
     const amarillos = ctrl.respuestas.filter(r => r.resultado && r.resultado.semaforo === 'amarillo').length;
     aviso('avisoAnalizar', 'Análisis terminado: ' + lista.length + ' respuesta(s) en ' + fmtTiempo(ms) +
-      ' (la revisión manual tomaría varios días). Casos que exigen su mirada: ' + rojos + ' en rojo y ' + amarillos + ' en amarillo. Pase al paso 5.', 'ok');
+      ' (la revisión manual tomaría varios días). Casos que exigen su mirada: ' + rojos + ' en rojo y ' + amarillos + ' en amarillo. Pase al paso 6.', 'ok');
     toast('Análisis terminado en ' + fmtTiempo(ms));
   };
   setTimeout(paso, 0);
@@ -4640,9 +4703,10 @@ function irAPaso(n) {
   document.querySelectorAll('.paso-btn').forEach(b => {
     b.className = 'paso-btn' + (b.dataset.paso === String(n) ? ' activo' : '');
   });
-  if (n === 5) renderRevision();
-  if (n === 6) renderComunicar();
-  if (n === 8) { renderUso(); renderBitacora(); }
+  if (n === 6) renderRevision();
+  if (n === 7) renderComunicar();
+  if (n === 8) renderMejoras();
+  if (n === 9) { renderUso(); renderBitacora(); }
   desplazarAlContenido();
 }
 function refrescarTodo() {
@@ -4654,13 +4718,14 @@ function refrescarTodo() {
   renderResumenAnalisis();
   renderRevision();
   renderComunicar();
+  renderMejoras();
   renderUso();
   renderBitacora();
   const chk = document.getElementById('chkGuardarNombres');
   if (chk) chk.checked = E.guardarNombres !== false;
 }
 
-/* ----------------------------- Paso 5 · Revisión ----------------------------- */
+/* ----------------------------- Paso 6 · Revisión ----------------------------- */
 function listaCasos() {
   const c = curso();
   return c.estudiantes.map(e => respuestaDe(e.codigo)).filter(r => r && r.resultado);
@@ -4692,7 +4757,7 @@ function renderRevision() {
   else if (filtro === 'discrepancia') visibles = casos.filter(r => r.discrepancia);
 
   if (!casos.length) {
-    cont.innerHTML = '<div class="card"><p class="ayuda">Todavía no hay respuestas analizadas en este control. Cárguelas en el paso 3 y ejecute el análisis en el paso 4.</p></div>';
+    cont.innerHTML = '<div class="card"><p class="ayuda">Todavía no hay respuestas analizadas en este control. Cárguelas en el paso 4 y ejecute el análisis en el paso 5.</p></div>';
     return;
   }
   if (!visibles.length) {
@@ -4824,7 +4889,7 @@ function aprobarVerdes() {
   aviso('avisoRevision', verdes.length + ' caso(s) verdes aprobados. Recuerde auditar al azar el 20 % para el informe de confiabilidad.', 'ok');
 }
 
-/* ----------------------------- Paso 6 · Comunicar ----------------------------- */
+/* ----------------------------- Paso 7 · Comunicar ----------------------------- */
 function aprobadas() { return listaCasos().filter(r => r.aprobada); }
 function renderComunicar() {
   const p = document.getElementById('pillPublicadas');
@@ -4841,7 +4906,7 @@ function renderComunicar() {
 }
 function publicarTodo() {
   const listas = aprobadas();
-  if (!listas.length) { aviso('avisoComunicar', 'Todavía no hay observaciones aprobadas. Apruébelas en el paso 5.', 'alerta'); return; }
+  if (!listas.length) { aviso('avisoComunicar', 'Todavía no hay observaciones aprobadas. Apruébelas en el paso 6.', 'alerta'); return; }
   listas.forEach(r => { r.publicado = true; });
   bitacora('Se publicaron ' + listas.length + ' observaciones aprobadas');
   guardarEstado(); renderComunicar(); renderTablaRespuestas();
@@ -4888,7 +4953,7 @@ function generarTiras() {
   if (!cont) return;
   const ctrl = control();
   const listas = aprobadas();
-  if (!listas.length) { aviso('avisoTiras', 'No hay observaciones aprobadas todavía. Apruébelas en el paso 5.', 'alerta'); cont.innerHTML = ''; return; }
+  if (!listas.length) { aviso('avisoTiras', 'No hay observaciones aprobadas todavía. Apruébelas en el paso 6.', 'alerta'); cont.innerHTML = ''; return; }
   const opciones = {
     nombre: document.getElementById('chkTirasNombre').checked,
     niveles: document.getElementById('chkTirasNiveles').checked,
@@ -4942,7 +5007,7 @@ function generarPaseControl() {
   const ctrl = control();
   if (!ctrl.pregunta) { aviso('avisoPaseControl', 'El control necesita su pregunta guardada (paso 1) para generar el pase.', 'alerta'); cont.innerHTML = ''; return; }
   if (!ctrl.abierto) {
-    aviso('avisoPaseControl', 'El control está cerrado para responder desde los celulares. Active la casilla en el paso 1 y guarde: así el pase funciona.', 'alerta');
+    aviso('avisoPaseControl', 'El control está cerrado para responder desde los celulares. Active la casilla de este mismo paso 2 (arriba) y el pase funcionará.', 'alerta');
   } else {
     aviso('avisoPaseControl', 'Pase del control listo. Proyéctelo o imprímalo: cada estudiante lo abre con la cámara de su celular.', 'ok');
   }
@@ -5001,7 +5066,7 @@ function consultar() {
   if (!codigo) { aviso('avisoConsulta', 'Escriba o seleccione un código (por ejemplo E-05).', 'alerta'); cont.innerHTML = ''; return; }
   const r = respuestaDe(codigo);
   if (!r || !r.resultado) { aviso('avisoConsulta', 'No hay una respuesta analizada con ese código en el control activo.', 'alerta'); cont.innerHTML = ''; return; }
-  if (!r.aprobada) { aviso('avisoConsulta', 'Ese estudiante todavía no tiene observaciones aprobadas (paso 5).', 'alerta'); cont.innerHTML = ''; return; }
+  if (!r.aprobada) { aviso('avisoConsulta', 'Ese estudiante todavía no tiene observaciones aprobadas (paso 6).', 'alerta'); cont.innerHTML = ''; return; }
   cont.innerHTML = htmlConsulta(r, control(), true);
   aviso('avisoConsulta', r.publicado ? 'Mostrando la retroalimentación de ' + codigo + '.' : 'Este caso está aprobado pero aún no publicado: puede mostrarlo en pantalla y publicarlo después si lo desea.', 'ok');
   bitacora('Consulta en pantalla de la retroalimentación de ' + codigo);
@@ -5017,7 +5082,106 @@ function limpiarConsulta() {
   aviso('avisoConsulta', '', '');
 }
 
-/* ----------------------------- Paso 7 · Reporte ----------------------------- */
+/* -------------------- Evidencia de mejora (pase del estudiante, RM1) -------------------- */
+/* El estudiante reescribe su respuesta después de leer las observaciones y su celular
+   genera un pase de mejora. Aquí se registra para dejar la evidencia y verificar si las
+   observaciones sirvieron: la comparación viaja dentro del pase, sin servidor. */
+function mejorasDelControl() {
+  const ctrl = control();
+  return (ctrl && ctrl.mejoras) ? ctrl.mejoras : [];
+}
+function registrarMejora() {
+  const campo = document.getElementById('txtPaseMejora');
+  const p = leerPase(campo ? campo.value : '');
+  if (!p || p.tipo !== 'mejora') {
+    aviso('avisoMejora', 'No se reconoció un pase de mejora. Pegue el pase completo (empieza por RM1.) o el enlace que le envió el estudiante.', 'alerta');
+    return;
+  }
+  const ctrl = control();
+  if (!ctrl) { aviso('avisoMejora', 'No hay un control activo.', 'error'); return; }
+  const d = p.datos || {};
+  const codigo = String(d.k || '').toUpperCase().trim();
+  if (!codigo) { aviso('avisoMejora', 'El pase no trae el código del estudiante.', 'error'); return; }
+  const c = curso();
+  if (!c.estudiantes.filter(e => e.codigo === codigo).length) {
+    c.estudiantes.push({ codigo: codigo, nombre: '', creado: new Date().toISOString() });
+  }
+  if (!ctrl.mejoras) ctrl.mejoras = [];
+  const repetido = ctrl.mejoras.filter(m => m.codigo === codigo).length > 0;
+  ctrl.mejoras = ctrl.mejoras.filter(m => m.codigo !== codigo);
+  ctrl.mejoras.push({
+    codigo: codigo,
+    antes: String(d.a || ''), nueva: String(d.b || ''),
+    L: d.L || {}, M: d.M || {}, util: String(d.u || ''),
+    fecha: d.t || new Date().toISOString()
+  });
+  bitacora('Pase de mejora registrado: ' + codigo);
+  guardarEstado();
+  if (campo) campo.value = '';
+  renderMejoras(); renderTablaEstudiantes(); renderTablaRespuestas();
+  aviso('avisoMejora', 'Mejora de ' + codigo + ' registrada' + (repetido ? ' (se reemplazó la anterior de ese estudiante)' : '') + '. Abajo puede ver cómo cambió su respuesta.', 'ok');
+}
+function textoTabla(nivel, ahora) {
+  if (nivel == null) return esc(String(ahora == null ? '—' : ahora));
+  return esc(String(nivel));
+}
+function renderMejoras() {
+  const cont = document.getElementById('mejorasContenido');
+  if (!cont) return;
+  const lista = mejorasDelControl();
+  if (!lista.length) {
+    cont.innerHTML = '<p class="ayuda">Todavía no hay mejoras registradas. Cuando un estudiante lea sus observaciones y reescriba su respuesta, péguele aquí el pase para dejar la evidencia.</p>';
+    return;
+  }
+  let filas = '', subieron = 0;
+  lista.forEach(m => {
+    let cambios = '', nSubio = 0;
+    ['idea', 'inf', 'arg'].forEach(k => {
+      const a = (m.L && m.L[k] != null) ? m.L[k] : null;
+      const b = (m.M && m.M[k] != null) ? m.M[k] : null;
+      let t = 'sin referencia';
+      if (a != null && b != null) {
+        if (b > a) { t = 'mejoró'; nSubio++; }
+        else if (b < a) { t = 'quedó más bajo'; }
+        else { t = 'igual'; }
+      }
+      cambios += '<li>' + esc(NOMBRE_CRIT[k]) + ': ' + textoTabla(a, a) + ' → <strong>' + textoTabla(b, b) + '</strong> (' + t + ')</li>';
+    });
+    if (nSubio) subieron++;
+    filas += '<tr><td><strong>' + esc(etiquetaEstudiante(m.codigo)) + '</strong></td>' +
+      '<td>' + esc((m.antes || '').slice(0, 220)) + ((m.antes || '').length > 220 ? '…' : '') + '</td>' +
+      '<td>' + esc((m.nueva || '').slice(0, 220)) + ((m.nueva || '').length > 220 ? '…' : '') + '</td>' +
+      '<td><ul style="margin:0 0 0 14px; padding:0">' + cambios + '</ul></td>' +
+      '<td>' + esc(NOMBRE_CRIT[m.util] || '—') + '</td></tr>';
+  });
+  cont.innerHTML = '<div class="progreso">' +
+    '<span class="pill p-azul">' + lista.length + ' mejora(s) registradas</span>' +
+    '<span class="pill p-verde">' + subieron + ' mejoraron al menos un criterio</span></div>' +
+    '<p class="ayuda">En el celular, deslice la tabla hacia un lado para ver todas las columnas.</p>' +
+    '<div class="tabla-scroll"><table><thead><tr><th scope="col">Estudiante</th><th scope="col">Respuesta inicial</th>' +
+    '<th scope="col">Respuesta mejorada</th><th scope="col">Nivel antes → ahora</th><th scope="col">Observación que más le sirvió</th>' +
+    '</tr></thead><tbody>' + filas + '</tbody></table></div>';
+}
+function exportarMejoras() {
+  const lista = mejorasDelControl();
+  if (!lista.length) { aviso('avisoMejora', 'Todavía no hay mejoras registradas para descargar.', 'alerta'); return; }
+  const cab = ['codigo', 'nombre', 'observacion_elegida', 'nivel_idea_antes', 'nivel_idea_ahora', 'nivel_inf_antes', 'nivel_inf_ahora', 'nivel_arg_antes', 'nivel_arg_ahora', 'respuesta_inicial', 'respuesta_mejorada', 'fecha'];
+  const limpiar = t => '"' + String(t == null ? '' : t).replace(/"/g, '""').replace(/\r?\n/g, ' ') + '"';
+  const filas = lista.map(m => [
+    limpiar(m.codigo), limpiar(nombreEstudiante(m.codigo) || ''), limpiar(NOMBRE_CRIT[m.util] || ''),
+    limpiar(m.L ? m.L.idea : ''), limpiar(m.M ? m.M.idea : ''),
+    limpiar(m.L ? m.L.inf : ''), limpiar(m.M ? m.M.inf : ''),
+    limpiar(m.L ? m.L.arg : ''), limpiar(m.M ? m.M.arg : ''),
+    limpiar(m.antes), limpiar(m.nueva), limpiar(m.fecha)
+  ].join(','));
+  descargar('mejoras_' + (control().nombre || 'control').replace(/[^\w\-]+/g, '_') + '.csv',
+    '\ufeff' + cab.join(',') + '\n' + filas.join('\n'), 'text/csv');
+  bitacora('Se descargaron ' + lista.length + ' mejora(s) en CSV');
+  guardarEstado();
+  aviso('avisoMejora', lista.length + ' mejora(s) descargadas en CSV.', 'ok');
+}
+
+/* ----------------------------- Paso 8 · Reporte ----------------------------- */
 function promedioCriterio(casos, k) {
   if (!casos.length) return 0;
   const s = casos.reduce((a, r) => a + r.resultado.criterios[k].nivel, 0);
@@ -5179,7 +5343,7 @@ function imprimirReporte() {
   imprimirHTML('<div class="card">' + document.getElementById('indicadores').innerHTML + '</div>' + cont.innerHTML, 'Reporte del curso · ' + control().nombre);
 }
 
-/* ----------------------------- Paso 8 · Datos ----------------------------- */
+/* ----------------------------- Paso 9 · Datos ----------------------------- */
 function renderUso() {
   const el = document.getElementById('usoAlmacenamiento');
   if (!el) return;
@@ -5296,7 +5460,7 @@ function cargarDemo() {
     E.cursoActivo = d.id;
     const ctrlDemo = E.controles.filter(c => c.cursoId === d.id)[0];
     if (ctrlDemo) E.controlActivo = ctrlDemo.id;
-    guardarEstado(); refrescarTodo(); irAPaso(5);
+    guardarEstado(); refrescarTodo(); irAPaso(6);
     toast('El curso de ejemplo ya estaba cargado.');
     return;
   }
@@ -5327,9 +5491,9 @@ function cargarDemo() {
   bitacora('Se cargó el curso de ejemplo con 9 respuestas');
   guardarEstado();
   refrescarTodo();
-  irAPaso(4);
-  setTimeout(() => { analizarCurso(); irAPaso(5); }, 60);
-  aviso('avisoAnalizar', 'Datos de ejemplo cargados: 9 respuestas del control «El hombre que calculaba». Así se ve el flujo completo. Bórrelos en el paso 8 cuando quiera.', 'ok');
+  irAPaso(5);
+  setTimeout(() => { analizarCurso(); irAPaso(6); }, 60);
+  aviso('avisoAnalizar', 'Datos de ejemplo cargados: 9 respuestas del control «El hombre que calculaba». Así se ve el flujo completo. Bórrelos en el paso 9 cuando quiera.', 'ok');
 }
 
 /* ----------------------------- Eventos de la docente ----------------------------- */
@@ -5341,9 +5505,9 @@ function conectarDocente() {
   on('btnBarraDocente', 'click', () => mostrarVista('vista-docente'));
   on('btnBarraEstudiante', 'click', () => mostrarVista('vista-estudiante'));
   on('btnBarraAyuda', 'click', () => mostrarVista('vista-ayuda'));
-  on('btnBarraRespaldo', 'click', () => { mostrarVista('vista-docente'); irAPaso(8); });
+  on('btnBarraRespaldo', 'click', () => { mostrarVista('vista-docente'); irAPaso(9); });
   on('btnAyudaRapida', 'click', () => mostrarVista('vista-ayuda'));
-  on('btnRespaldoRapido', 'click', () => { mostrarVista('vista-docente'); irAPaso(8); });
+  on('btnRespaldoRapido', 'click', () => { mostrarVista('vista-docente'); irAPaso(9); });
 
   document.querySelectorAll('.paso-btn').forEach(b => b.addEventListener('click', () => irAPaso(parseInt(b.dataset.paso, 10))));
 
@@ -5372,7 +5536,7 @@ function conectarDocente() {
     if (ct) { ct.abierto = this.checked; bitacora(this.checked ? 'Se abrió el control para responder desde los celulares' : 'Se cerró el control para responder desde los celulares'); guardarEstado(); }
   });
 
-  /* Paso 2 */
+  /* Paso 3 */
   on('selCurso', 'change', function () {
     E.cursoActivo = this.value; guardarEstado();
     const ct = control();
@@ -5426,7 +5590,7 @@ function conectarDocente() {
   on('btnRefrescarRespuestas', 'click', () => { refrescarTodo(); toast('Lista actualizada.'); });
   on('btnVaciarRespuestas', 'click', vaciarRespuestas);
 
-  /* Paso 4 */
+  /* Paso 5 */
   on('btnAnalizar', 'click', analizarCurso);
   on('btnReprocesar', 'click', reprocesarTodo);
   on('chkIA', 'change', function () {
@@ -5476,7 +5640,7 @@ function conectarDocente() {
     });
   }
 
-  /* Paso 6 */
+  /* Paso 7 (el pase del control se genera desde el paso 2) */
   on('btnPublicar', 'click', publicarTodo);
   on('btnDespublicar', 'click', despublicarTodo);
   on('btnGenerarTiras', 'click', generarTiras);
@@ -5489,12 +5653,15 @@ function conectarDocente() {
   on('btnLimpiarConsulta', 'click', limpiarConsulta);
   on('txtConsultaCodigo', 'keydown', ev => { if (ev.key === 'Enter') consultar(); });
 
-  /* Paso 7 */
+  /* Paso 8 */
   on('btnGenerarReporte', 'click', () => generarReporte(false));
   on('btnExportarResultados', 'click', exportarResultados);
   on('btnImprimirReporte', 'click', imprimirReporte);
+  on('btnRegistrarMejora', 'click', registrarMejora);
+  on('btnExportarMejoras', 'click', exportarMejoras);
+  on('txtPaseMejora', 'keydown', ev => { if (ev.key === 'Enter' && (ev.ctrlKey || ev.metaKey)) registrarMejora(); });
 
-  /* Paso 8 */
+  /* Paso 9 */
   on('btnExportarTodo', 'click', exportarTodo);
   on('btnImportarTodo', 'click', () => { const a = document.getElementById('archivoImportar'); if (a) a.click(); });
   on('archivoImportar', 'change', importarTodo);
@@ -5526,6 +5693,7 @@ const LS_ALUMNO = 'retrolectura_alumno_v1';
 let PSC = null;  /* pase del control abierto en este dispositivo */
 let PSR = null;  /* pase de retroalimentación abierto */
 let PSE = null;  /* pase de entrega generado por el estudiante */
+let PSM = null;  /* resultado de la comparación antes/después (para el pase de mejora) */
 
 function alumnoGuardado() {
   try { return JSON.parse(localStorage.getItem(LS_ALUMNO) || 'null'); } catch (e) { return null; }
@@ -5689,8 +5857,44 @@ function compararAntesDespues() {
     '<div class="tabla-scroll"><table><thead><tr><th scope="col">Criterio</th><th scope="col">Antes</th><th scope="col">Ahora</th><th scope="col">Cambio</th></tr></thead><tbody>' +
     filas + '</tbody></table></div>' +
     '<p class="obs-texto">' + esc(cierre) + '</p>' +
-    '<p class="tira-cod">Observación que elegiste como más útil: ' + esc(nombres[util]) + '. Comparación hecha con la misma rúbrica del control.</p></div>';
+    '<p class="tira-cod">Observación que elegiste como más útil: ' + esc(nombres[util]) + '. Comparación hecha con la misma rúbrica del control.</p>' +
+    '<h3>Paso final: entrégale tu mejora a tu profesor</h3>' +
+    '<p class="sub">Genera tu <strong>pase de mejora</strong>: con él tu profesor ve tu respuesta de antes, tu respuesta nueva y en qué criterios mejoraste. Así comprueba que las observaciones te sirvieron.</p>' +
+    '<div class="acciones no-impresion"><button type="button" class="btn btn-dorado btn-ancho" id="btnPaseMejora">📤 Generar mi pase de mejora</button></div>' +
+    '<div id="paseMejora"></div></div>';
+  PSM = { nueva: nueva, despues: despues, util: util };
   aviso('avisoMeta', 'Comparación lista. Guarda o muestra este resultado a tu profesor si te lo pide.', 'ok');
+  const bp = document.getElementById('btnPaseMejora');
+  if (bp) bp.addEventListener('click', generarPaseMejora);
+}
+/* Pase de mejora (RM1.): viaja igual que los otros pases, así que el profesor lo
+   recibe sin que ningún dato del estudiante salga de los dos celulares. */
+function generarPaseMejora() {
+  const cont = document.getElementById('paseMejora');
+  if (!PSR || !PSM) { if (cont) cont.innerHTML = '<p class="ayuda">Primero compara tus dos versiones.</p>'; return; }
+  const guardado = alumnoGuardado() || {};
+  const codigo = String(PSR.k || guardado.codigo || '').toUpperCase().trim();
+  if (!codigo) { aviso('avisoMeta', 'Falta tu código de estudiante. Pídele a tu profesor que revise tu pase de entrega.', 'alerta'); return; }
+  const pase = paseMejora(PSR.n || '', PSR.p || '', {
+    codigo: codigo, antes: PSR.r || '', nueva: PSM.nueva,
+    L: PSR.L || {}, M: PSM.despues, util: PSM.util
+  });
+  const enlace = enlacePase(pase);
+  guardado.paseMejora = pase;
+  guardarAlumno(guardado);
+  if (!cont) return;
+  cont.innerHTML = '<p><strong>Mi pase de mejora</strong></p>' + generarQR(enlace, 320) +
+    '<div class="pase-codigo">' + esc(enlace) + '</div>' +
+    '<div class="acciones no-impresion">' +
+    '<button type="button" class="btn btn-azul" id="btnCopiarPaseMejora">📋 Copiar el enlace</button>' +
+    '<button type="button" class="btn btn-gris" id="btnWAPaseMejora">💬 Enviar por WhatsApp</button>' +
+    '</div>' +
+    '<p class="ayuda">Muéstrale este código a tu profesor o envíaselo por WhatsApp. Queda guardado en este celular por si necesitas mostrarlo otra vez.</p>';
+  const bc = document.getElementById('btnCopiarPaseMejora');
+  if (bc) bc.addEventListener('click', () => copiarTexto(enlace));
+  const bw = document.getElementById('btnWAPaseMejora');
+  if (bw) bw.addEventListener('click', () => compartirWhatsApp(enlace));
+  aviso('avisoMeta', 'Pase de mejora generado. Entrégaselo a tu profesor para que vea tu avance.', 'ok');
 }
 
 /* ----------------------------- 3. Cámara para leer QR ----------------------------- */
@@ -5763,7 +5967,12 @@ function tratarEnlace() {
     mostrarVista('vista-estudiante');
     PSE = h;
     mostrarPaseDeEntrega(h);
-    aviso('avisoEst', 'Este enlace contiene una respuesta de control. Si eres estudiante, muéstraselo a tu profesor; si eres la docente, pégalo en el paso 3 para recibirlo.', 'ok');
+    aviso('avisoEst', 'Este enlace contiene una respuesta de control. Si eres estudiante, muéstraselo a tu profesor; si eres la docente, pégalo en el paso 4 para recibirlo.', 'ok');
+  } else if (p.tipo === 'mejora') {
+    const campo = document.getElementById('txtPaseMejora');
+    if (campo) campo.value = h;
+    mostrarVista('vista-estudiante');
+    aviso('avisoEst', 'Este enlace contiene un pase de mejora (la respuesta nueva de un estudiante). Muéstraselo a tu profesor; si eres la docente, pégalo en el paso 8, en «Evidencia de mejora».', 'ok');
   }
 }
 function conectarEstudiante() {
