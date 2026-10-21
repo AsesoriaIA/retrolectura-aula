@@ -121,7 +121,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--azul-medio)}
 .opcion{display:flex; align-items:flex-start; gap:10px; padding:11px; border:2px solid var(--gris-2); border-radius:var(--radio-chico); margin-bottom:8px; cursor:pointer; background:#fff}
 .opcion input{min-height:auto; width:22px; height:22px; margin-top:2px; flex:0 0 22px}
 .opcion span{font-size:.95rem}
-.check-fila{display:flex; align-items:flex-start; gap:11px; background:var(--dorado-claro); border:2px solid #F3D089; border-radius:var(--radio-chico); padding:12px}
+.check-fila{display:flex; flex-wrap:wrap; align-items:flex-start; gap:11px; background:var(--dorado-claro); border:2px solid #F3D089; border-radius:var(--radio-chico); padding:12px}
+.check-fila .opcion{flex:1 1 150px; min-width:0; margin-bottom:0}
 .check-fila input{width:24px; height:24px; flex:0 0 24px; margin-top:2px}
 .check-fila label{font-size:.92rem; line-height:1.45}
 .pie-campo{display:flex; justify-content:space-between; gap:10px; font-size:.8rem; color:var(--texto-suave); margin-top:4px; flex-wrap:wrap}
@@ -153,6 +154,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--azul-medio)}
 .aviso.alerta{border-color:var(--amarillo); background:var(--amarillo-claro)}
 .aviso.error{border-color:var(--rojo); background:var(--rojo-claro)}
 .pill{display:inline-block; padding:3px 10px; border-radius:999px; font-size:.76rem; font-weight:700; white-space:nowrap}
+/* El nombre del control puede ser largo: nunca debe estirar el documento en celular */
+#txtControlActivo{max-width:100%; white-space:normal; overflow-wrap:anywhere; line-height:1.35}
 .p-verde{background:var(--verde-claro); color:var(--verde)}
 .p-amarillo{background:var(--amarillo-claro); color:var(--amarillo)}
 .p-rojo{background:var(--rojo-claro); color:var(--rojo)}
